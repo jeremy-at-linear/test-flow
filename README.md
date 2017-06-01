@@ -8,14 +8,16 @@ The examples below assume the project is "test-flow" and the machine that hosts 
 ## Setup
 ### Admin
 1. Create the repo on Github. 
-2. Clone the repo on a networked machine behind the firewall. This repo is called "origin" because it should be the origin repo for all users
+2. Clone the repo on CENTRAL. This repo is called "origin" because it should be the origin repo for all users
    * `$ git clone https://github.com/jeremy-at-linear/test-flow.git`
-3. Make a "develop" branch
+3. Share the folder test-flow with read/write permissions so people can access it.
+4. Make a "develop" branch
+   * `$ cd test-flow`
    * `$ git branch develop`
 
 ### User
 1. Clone the origin repo
-   * `$ git clone "CENTRAL"/test-flow`
+   * `$ git clone //CENTRAL/test-flow`
    * `cd test-flow`
 2. Checkout the "develop" branch (users should **never** commit to origin/master)
    * `$ git checkout -b develop origin/develop`
@@ -23,7 +25,7 @@ The examples below assume the project is "test-flow" and the machine that hosts 
 ## Workflow
 ### User
 1. Make a topic (feature) branch to work on
-  * `$ git checkout -b feature`
+   * `$ git checkout -b feature`
 2. Work on feature and **[commit often]**.
 3. When feature is finished and commited merge into develop
    * `$ git checkout develop`
@@ -41,17 +43,28 @@ The examples below assume the project is "test-flow" and the machine that hosts 
          * `$ git -a -m"merge external changes"` <- carefull with -a, it adds everything to the commit
       4. Then do the push again
          * `$ git push origin`
-7. Repeat
+7. Repeat for next feature
 
 ### Admin
 1. When enough good features are ready in develop make a release branch (in the origin repo)
+   * `$ git checkout -b release`
 2. Test the release branch and make bugfixes as necessary
 3. Merge the bugfixes into origin/develop
+   * `$ git checkout develop`
+   * `$ git merge release`
+   * `$ git checkout release`
+   * repeat above until all bugs are gone
 4. Merge the release branch into origin/master
+   * `$ git checkout master`
+   * `$ git merge release`
 5. Make a tag from origin/master
+   * `$ git tag -a v0.1.0 -m"release version 0.1.0"`
 6. Push origin/master up to Github/master
+   * `$ git push origin` <- in this case "origin" is the GitHub repo
+   * `$ get push origin v0.1.0` <- push the tag (not pushed by default)
 7. Delete the release branch
-8. Repeat
+   * `$ git checkout -b release`
+8. Repeat for next release
 
 [this article]: http://nvie.com/posts/a-successful-git-branching-model/
 [commit often]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
