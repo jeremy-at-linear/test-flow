@@ -2,7 +2,7 @@
 A test of maintaining a project in git with multiple contributers.
 
 This readme is becoming a place for notes on how the flow works.
-We are modeling the flow off of [this article][git-flow], with some changes.
+We are modeling the flow off of [this article], with some changes.
 The examples below assume the project is "test-flow" and the machine that hosts the origin is called "CENTRAL"
 
 ## Setup
@@ -33,6 +33,14 @@ The examples below assume the project is "test-flow" and the machine that hosts 
 5. Do testing to make sure it works
 6. Push develop up to origin/develop
    * `$ git push origin`
+      1. If someone else has pushed to develop since you checked it out do a pull
+         * `$ git fectch origin` <- this may be unnecessary
+         * `$ git pull`
+      2. If there are conficts they will show up in the file, edit the file to get rid of the conflict and all the <<< === >>> stuff
+      3. Merge the changes
+         * `$ git -a -m"merge external changes"` <- carefull with -a, it adds everything to the commit
+      4. Then do the push again
+         * `$ git push origin`
 7. Repeat
 
 ### Admin
