@@ -2,7 +2,8 @@
 A test of maintaining a project in git with multiple contributers.
 
 This readme is becoming a place for notes on how the flow works.
-We are modeling the flow off of [this article]. With some changes.
+We are modeling the flow off of [this article][git-flow], with some changes.
+The examples below assume the project is "test-flow" and the machine that hosts the origin is called "CENTRAL"
 
 ## Setup
 ### Admin
@@ -14,7 +15,8 @@ We are modeling the flow off of [this article]. With some changes.
 
 ### User
 1. Clone the origin repo
-   * `$ git clone <MACH_NAME>/test-flow`
+   * `$ git clone "CENTRAL"/test-flow`
+   * `cd test-flow`
 2. Checkout the "develop" branch (users should **never** commit to origin/master)
    * `$ git checkout -b develop origin/develop`
 
