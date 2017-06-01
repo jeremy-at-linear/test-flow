@@ -2,7 +2,7 @@
 A test of maintaining a project in git with multiple contributers.
 
 This readme is becoming a place for notes on how the flow works.
-We are modeling the flow off of [this article][git-flow]. With some changes.
+We are modeling the flow off of [this article]. With some changes.
 
 ## Setup
 ### Admin
@@ -14,7 +14,7 @@ We are modeling the flow off of [this article][git-flow]. With some changes.
 
 ### User
 1. Clone the origin repo
-   * `$ git clone [MACH_NAME]/test-flow`
+   * `$ git clone <MACH_NAME>/test-flow`
 2. Checkout the "develop" branch (users should **never** commit to origin/master)
    * `$ git checkout -b develop origin/develop`
 
@@ -22,7 +22,7 @@ We are modeling the flow off of [this article][git-flow]. With some changes.
 ### User
 1. Make a topic (feature) branch to work on
   * `$ git checkout -b feature`
-2. Work on feature and **[commit often][commiting]**.
+2. Work on feature and **[commit often]**.
 3. When feature is finished and commited merge into develop
    * `$ git checkout develop`
    * `$ git merge feature`
@@ -43,5 +43,5 @@ We are modeling the flow off of [this article][git-flow]. With some changes.
 7. Delete the release branch
 8. Repeat
 
-[git-flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[commiting]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+[this article]: http://nvie.com/posts/a-successful-git-branching-model/
+[commit often]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
