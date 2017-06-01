@@ -47,6 +47,7 @@ The examples below assume the project is "test-flow" and the machine that hosts 
 
 ### Admin
 1. When enough good features are ready in develop make a release branch (in the origin repo)
+   * `$ git checkout develop`
    * `$ git checkout -b release`
 2. Test the release branch and make bugfixes as necessary
 3. Merge the bugfixes into origin/develop
