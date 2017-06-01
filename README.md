@@ -21,12 +21,16 @@ We are modeling the flow off of [this article][git-flow]. With some changes.
 ## Workflow
 ### User
 1. Make a topic (feature) branch to work on
-  * `$ git checkout -b [FEATURE]`
-2. Work on feature and commit often.
+  * `$ git checkout -b feature`
+2. Work on feature and **[commit often][commiting]**.
 3. When feature is finished and commited merge into develop
+   * `$ git checkout develop`
+   * `$ git merge feature`
 4. Delete feature branch (if all work is done)
+   * `$ git branch -d feature`
 5. Do testing to make sure it works
 6. Push develop up to origin/develop
+   * `$ git push origin`
 7. Repeat
 
 ### Admin
@@ -40,3 +44,4 @@ We are modeling the flow off of [this article][git-flow]. With some changes.
 8. Repeat
 
 [git-flow]: http://nvie.com/posts/a-successful-git-branching-model/
+[commiting]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
